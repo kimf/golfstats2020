@@ -17,7 +17,13 @@
     "eject": "react-app-rewired eject"
   },
   "eslintConfig": {
-    "extends": "react-app"
+    "extends": "react-app",
+    "plugins": [
+      "simple-import-sort"
+    ],
+    "rules": {
+      "simple-import-sort/sort": "error"
+    }
   },
   "browserslist": {
     "production": [
@@ -37,6 +43,7 @@
     "@types/react-dom": "^16.9.5",
     "customize-cra": "^0.9.1",
     "customize-cra-react-refresh": "^1.0.1",
+    "eslint-plugin-simple-import-sort": "^5.0.2",
     "react-app-rewired": "^2.1.5",
     "typescript": "^3.8.3"
   }
