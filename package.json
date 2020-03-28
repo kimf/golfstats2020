@@ -41,6 +41,7 @@
     "@types/node": "^13.9.5",
     "@types/react": "^16.9.27",
     "@types/react-dom": "^16.9.5",
+    "babel-plugin-blade": "^0.1.11",
     "customize-cra": "^0.9.1",
     "customize-cra-react-refresh": "^1.0.1",
     "eslint-plugin-simple-import-sort": "^5.0.2",
