@@ -3,18 +3,26 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@reduxjs/toolkit": "^1.3.2",
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
+    "@types/react-router-dom": "^5.1.3",
+    "gretchen": "^1.0.0",
     "react": "^0.0.0-experimental-aae83a4b9",
     "react-dom": "^0.0.0-experimental-aae83a4b9",
-    "react-scripts": "3.4.1"
+    "react-redux": "^7.2.0",
+    "react-router-dom": "^5.1.2",
+    "react-router-transition": "^2.0.0",
+    "react-scripts": "3.4.1",
+    "redux-thunk": "^2.3.0"
   },
   "scripts": {
     "start": "react-app-rewired start",
     "build": "react-app-rewired build",
     "test": "react-app-rewired test",
-    "eject": "react-app-rewired eject"
+    "eject": "react-app-rewired eject",
+    "db": "json-server --watch -p 3002 db.json"
   },
   "eslintConfig": {
     "extends": "react-app",
@@ -41,10 +49,12 @@
     "@types/node": "^13.9.5",
     "@types/react": "^16.9.27",
     "@types/react-dom": "^16.9.5",
+    "@types/react-redux": "^7.1.7",
     "babel-plugin-blade": "^0.1.11",
     "customize-cra": "^0.9.1",
     "customize-cra-react-refresh": "^1.0.1",
     "eslint-plugin-simple-import-sort": "^5.0.2",
+    "json-server": "^0.16.1",
     "react-app-rewired": "^2.1.5",
     "typescript": "^3.8.3"
   }

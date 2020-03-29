@@ -19,3 +19,11 @@ const [startTransition, isPending] = useTransition({
 
 const deferredValue = useDeferredValue(value, { timeoutMs: 2000 });
 ```
+
+```javascript
+componentDidMount() {
+  hoodie.connectionStatus.startChecking({interval: 3000})
+  hoodie.connectionStatus.on('disconnect', () => this.props.updateStatus(false))
+  hoodie.connectionStatus.on('reconnect', () => this.props.updateStatus(true))
+}
+```
