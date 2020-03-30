@@ -1,5 +1,4 @@
-import "./stylesheets/grid.css";
-import "./stylesheets/index.css"; // muting Property 'hot' does not exist on type 'NodeModule'
+import "./stylesheets/index.css";
 
 import React from "react";
 import ReactDOM from "react-dom";

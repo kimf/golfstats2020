@@ -13,8 +13,7 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
-    "jsx": "react",
-    "typeRoots": ["./declarations.d.ts"]
+    "jsx": "react"
   },
-  "include": ["src", "./declarations.d.ts"]
+  "include": ["src"]
 }

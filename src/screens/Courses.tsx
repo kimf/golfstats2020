@@ -1,12 +1,15 @@
+import { List, ListItem, ListItemText } from "@material-ui/core";
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 
+import Page from "../components/Page";
 import { fetchCoursesThunk } from "../features/coursesSlice";
 import { RootState } from "../rootReducer";
 
 const Courses = () => {
   const dispatch = useDispatch();
-  const { data: courses, isLoading, error } = useSelector(
+  const { courses, isLoading, error } = useSelector(
     (state: RootState) => state.courses
   );
 
@@ -15,18 +18,26 @@ const Courses = () => {
   }, [dispatch]);
 
   return (
-    <div className="col">
+    <Page title="Välj bana">
       {isLoading && <div className="loading" />}
       {error && <div className="error">{error}</div>}
-      <h2>Välj bana</h2>
-      <ul>
+      <List>
         {courses.map(course => (
-          <li key={course.id}>
-            {course.name} <small>({course.holes.length} hål)</small>
-          </li>
+          <ListItem
+            alignItems="flex-start"
+            key={course.id}
+            button
+            component={Link}
+            to={`/play/${course.id}`}
+          >
+            <ListItemText
+              primary={course.name}
+              secondary={`Par ${course.par}. ${course.holesCount} hål.`}
+            />
+          </ListItem>
         ))}
-      </ul>
-    </div>
+      </List>
+    </Page>
   );
 };
 

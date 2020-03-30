@@ -1,9 +1,9 @@
-// declare module "react-router-transition";
 import React from "react";
 import { Provider } from "react-redux";
+import { BrowserRouter as Router, Route } from "react-router-dom";
 
-// import { BrowserRouter as Router, Route } from "react-router-dom";
-// import { AnimatedSwitch } from "react-router-transition";
+import AnimatedSwitch from "./components/AnimatedSwitch";
+// import Header from "./components/Header";
 import Courses from "./screens/Courses";
 import Play from "./screens/Play";
 import store from "./store";
@@ -12,18 +12,16 @@ function App() {
   return (
     <div className="container">
       <Provider store={store}>
-        <Courses />
-        {/*   <Router>
-          <AnimatedSwitch
-            atEnter={{ opacity: 0 }}
-            atLeave={{ opacity: 0 }}
-            atActive={{ opacity: 1 }}
-            className="switch-wrapper"
-          >
-            <Route exact path="/" component={Courses} />
-            <Route path="/play" component={Play} />
+        <Router>
+          <AnimatedSwitch>
+            <Route path="/play/:id">
+              <Play />
+            </Route>
+            <Route path="/">
+              <Courses />
+            </Route>
           </AnimatedSwitch>
-        </Router> */}
+        </Router>
       </Provider>
     </div>
   );
